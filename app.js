@@ -21,7 +21,6 @@ app.use('/api/v1/tasks', tasks);
 //app.delete('/api/v1/tasks/:id') - delete a task)
 
 const port = 3000;
-console.log(process.env);
 const startServer = async () => {
     try {
         await connectDB(process.env.MONGO_URI);
