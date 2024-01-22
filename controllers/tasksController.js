@@ -1,5 +1,6 @@
 const TaskModel = require('../dbModels/TaskModel');
 const asyncWrapper = require('../middlewares/async');
+const { createCustomError } = require('../errors/custom-errors');
 
 const getAllTasks = asyncWrapper(async (req, res, next) => {
     const allTasks = await TaskModel.find();
@@ -28,12 +29,7 @@ const getTask = asyncWrapper(async (req, res, next) => {
         _id: taskID,
     });
     if (!task) {
-        const error = new Error('Not Found');
-        error.status = 404;
-        return next(error);
-        //we will get this error if the ID format is correct but the ID is not avaialble
-        //if the id syntax is right but we cannot find the data, throw this error
-        return res.status(404).json({ msg: `No task with id: ${taskID}` });
+        return next(createCustomError(`No Task with ID: ${taskID}`, 404));
     }
     return res.status(201).json({
         status: 'success',
