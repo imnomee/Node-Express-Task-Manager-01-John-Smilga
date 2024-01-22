@@ -20,7 +20,8 @@ app.use(errorHandler); // if no page is found that the last handler
 //app.patch('/api/v1/tasks/:id') - update a task
 //app.delete('/api/v1/tasks/:id') - delete a task)
 
-const port = 3000;
+const port = process.env.PORT || 3000;
+
 const startServer = async () => {
     try {
         await connectDB(process.env.MONGO_URI);
