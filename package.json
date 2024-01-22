@@ -1,13 +1,13 @@
 {
-  "name": "jobs",
+  "name": "task_manager",
   "version": "1.0.0",
-  "description": "",
+  "description": "Its a basic task manager, where you can add, edit, remove, complete tasks. Data is saved into the MongoDB.",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Noman Rafiq, taught by John Smilga",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.6.0",
