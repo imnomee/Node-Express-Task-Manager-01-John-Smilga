@@ -9,7 +9,7 @@ we will need to npm install the package dependencies from the package.json
 
 To connected your own mongodb account with this app:
 create a " .env " in the root of the app
-inside the  " .env " create MONGO_URI variables
+inside the  " .env " create " MONGO_URI " variable
 and set that to your own connection String from the MongoDB.
 
 Enjoy and manage your simple tasks.
